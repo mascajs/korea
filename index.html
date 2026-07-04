@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#081b33">
+  <title>대한민국 시간여행단</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="처음으로"><span>◉</span> 대한민국 시간여행단</a>
+    <nav aria-label="주요 메뉴">
+      <a href="#history">역사</a><a href="#flag">태극기</a><a href="#culture">문화</a><a href="#missions">미션</a><a href="#camera">포토존</a><a href="#review">후기</a><a href="prompts.html">만들기 프롬프트</a>
+    </nav>
+    <button id="soundBtn" class="icon-btn" type="button" aria-pressed="false">♪ 소리 켜기</button>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">K-CULTURE QUEST · 6개의 별을 모아라</p>
+        <h1><span class="title-line">시간을 건너</span><span class="title-line title-korea"><em>대한민국</em>을</span><span class="title-line">만나다</span></h1>
+        <p class="hero-intro"><span>고대의 첫 나라부터 오늘의 K-컬쳐까지.</span><span>읽기만 하는 여행은 끝!</span><span>눌러 보고, 맞혀 보고, 직접 기록해 보세요.</span></p>
+        <div class="hero-actions"><a class="primary" href="#history">여행 시작</a><a class="ghost" href="#missions">바로 미션 도전</a></div>
+      </div>
+      <div class="hero-art reveal" aria-label="전통과 현대가 어우러진 대한민국 일러스트">
+        <img src="assets/korea-journey-v2.png" alt="경복궁, 북한산, 풍물 장구, 한식, 한강과 서울 야경이 어우러진 대한민국 문화 일러스트">
+        <div class="passport"><small>나의 탐험 기록</small><strong><span id="starCount">0</span> / 6 ★</strong></div>
+      </div>
+    </section>
+
+    <section id="history" class="section history-section">
+      <div class="section-heading"><div><p class="eyebrow">MISSION 01 · HISTORY</p><h2>한반도 시간 터널</h2></div><p>고조선부터 오늘의 대한민국까지 9개 시대를 탐험하세요. 사건뿐 아니라 생활·문화유산·생각 질문도 만날 수 있습니다.</p></div>
+      <div class="timeline" role="tablist" aria-label="한국사 시대 선택">
+        <button class="era active" data-era="gojoseon" role="tab">고조선</button>
+        <button class="era" data-era="three" role="tab">삼국·가야</button>
+        <button class="era" data-era="northsouth" role="tab">남북국</button>
+        <button class="era" data-era="goryeo" role="tab">고려</button>
+        <button class="era" data-era="joseon" role="tab">조선</button>
+        <button class="era" data-era="empire" role="tab">개항·대한제국</button>
+        <button class="era" data-era="occupation" role="tab">일제강점기</button>
+        <button class="era" data-era="republic" role="tab">정부수립·성장</button>
+        <button class="era" data-era="today" role="tab">오늘</button>
+      </div>
+      <article id="eraPanel" class="era-panel" aria-live="polite"></article>
+      <p class="source-note">※ 역사는 여러 관점과 해석을 가질 수 있습니다. 이 페이지는 중학생의 큰 흐름 이해를 위한 입문용 요약입니다.</p>
+    </section>
+
+    <section id="flag" class="section flag-section">
+      <div class="section-heading light"><div><p class="eyebrow">MISSION 02 · TAEGEUKGI</p><h2>한 장의 국기에 담긴 세계</h2></div><p>태극기의 시작과 변화, 태극과 네 괘가 상징하는 뜻을 눌러 확인하세요.</p></div>
+      <div class="flag-layout">
+        <div class="flag-stage" aria-label="대한민국 국기 태극기 설명 그림">
+          <div class="taegeuk-symbol"><span></span></div>
+          <button class="trigram trigram-geon" data-trigram="geon" aria-label="건괘 설명"><i></i><i></i><i></i></button>
+          <button class="trigram trigram-gon" data-trigram="gon" aria-label="곤괘 설명"><i class="broken"></i><i class="broken"></i><i class="broken"></i></button>
+          <button class="trigram trigram-gam" data-trigram="gam" aria-label="감괘 설명"><i class="broken"></i><i></i><i class="broken"></i></button>
+          <button class="trigram trigram-ri" data-trigram="ri" aria-label="리괘 설명"><i></i><i class="broken"></i><i></i></button>
+        </div>
+        <div class="flag-detail"><span id="trigramHanja" class="hanja">乾</span><p class="eyebrow" id="trigramName">건 · 하늘</p><h3 id="trigramTitle">끊어지지 않은 세 효</h3><p id="trigramText">건괘는 하늘을 상징하며 태극기의 왼쪽 위에 자리합니다.</p><div class="flag-meaning"><b>흰 바탕</b><span>밝음과 순수, 평화를 사랑하는 민족성</span><b>태극</b><span>음과 양이 조화를 이루며 변화하는 우주의 원리</span><b>네 괘</b><span>하늘·땅·물·불이 변화하고 조화를 이루는 모습</span></div></div>
+      </div>
+      <div class="flag-history">
+        <article><b>1882</b><h3>태극기의 출발</h3><p>조미수호통상조약 체결 과정에서 국기의 필요성이 커졌고, 박영효가 일본으로 가는 배 안에서 태극 문양과 네 괘를 배치한 기를 사용한 것으로 알려져 있습니다.</p></article>
+        <article><b>1883</b><h3>공식 국기로 반포</h3><p>고종은 태극기 형식의 국기를 조선의 국기로 공식 반포했습니다. 초기에는 태극과 괘의 모양·배치가 지금처럼 완전히 통일되지는 않았습니다.</p></article>
+        <article><b>1942</b><h3>독립운동의 상징</h3><p>대한민국 임시정부는 국기 제작법을 정해 태극기를 독립 의지와 공동체의 상징으로 사용했습니다.</p></article>
+        <article><b>1949~현재</b><h3>현재 규격 확립</h3><p>대한민국 정부가 국기 제작법을 고시했고, 이후 관련 법령을 통해 색상·비율·괘의 위치와 그리는 방법이 표준화되었습니다.</p></article>
+      </div>
+    </section>
+
+    <section id="culture" class="section culture-section">
+      <div class="section-heading light"><div><p class="eyebrow">MISSION 03 · CULTURE</p><h2>한류의 비밀 보관소</h2></div><p>각 카테고리 안에는 기원, 특징, 대표 사례, 오늘의 변화, 체험 미션까지 들어 있습니다.</p></div>
+      <div class="culture-grid">
+        <button class="culture-card" data-card="music"><span class="num">01</span><span class="emoji">🥁</span><h3>음악</h3><p>국악에서 K-pop까지</p><span class="open">열어 보기 ↗</span></button>
+        <button class="culture-card" data-card="hanbok"><span class="num">02</span><span class="emoji">🪭</span><h3>한복</h3><p>선과 색이 만든 멋</p><span class="open">열어 보기 ↗</span></button>
+        <button class="culture-card" data-card="food"><span class="num">03</span><span class="emoji">🍲</span><h3>음식</h3><p>함께 나누는 한 상</p><span class="open">열어 보기 ↗</span></button>
+        <button class="culture-card" data-card="heritage"><span class="num">04</span><span class="emoji">🏯</span><h3>문화유산</h3><p>시간을 품은 장소</p><span class="open">열어 보기 ↗</span></button>
+      </div>
+      <dialog id="cultureDialog"><button class="dialog-close" aria-label="닫기">×</button><div id="dialogBody"></div></dialog>
+    </section>
+
+    <section id="missions" class="section mission-section">
+      <div class="section-heading"><div><p class="eyebrow">MISSION 04 · PLAY</p><h2>도전! K-미션</h2></div><p>관찰 게임은 1분, 퀴즈는 2분이면 완료할 수 있습니다.</p></div>
+      <div class="game-tabs"><button class="game-tab active" data-game="hunt">60초 문화 찾기</button><button class="game-tab" data-game="quiz">문화 퀴즈</button></div>
+      <div id="huntGame" class="game-panel active">
+        <div class="hunt-copy"><p class="game-label">빠른 관찰 미션</p><h3>그림 속 한국 문화 5개를 찾아라!</h3><p>아래 단어를 보고 그림에서 해당 위치를 누르세요. 틀려도 감점은 없습니다.</p><div id="huntChecklist" class="hunt-checklist"></div><div class="game-stats"><span>발견 <b id="foundCount">0</b>/5</span><button id="resetHunt" class="small-btn">다시 하기</button></div></div>
+        <div id="huntImage" class="hunt-image"><img src="assets/korea-journey-v2.png" alt="한국의 전통과 현대 문화가 담긴 관찰 그림"><button class="hotspot palace" data-find="궁궐" aria-label="궁궐 찾기"></button><button class="hotspot mountain" data-find="북한산" aria-label="북한산 찾기"></button><button class="hotspot janggu" data-find="장구" aria-label="장구 찾기"></button><button class="hotspot food" data-find="한식" aria-label="한식 찾기"></button><button class="hotspot seoul" data-find="서울" aria-label="서울 찾기"></button></div>
+      </div>
+      <div id="quizGame" class="game-panel">
+        <div class="quiz-box"><div class="quiz-progress"><span id="quizStep">문제 1 / 4</span><span id="quizScore">0점</span></div><h3 id="quizQuestion"></h3><div id="quizAnswers" class="quiz-answers"></div><p id="quizFeedback" aria-live="polite"></p><button id="nextQuestion" class="primary" hidden>다음 문제</button></div>
+      </div>
+    </section>
+
+    <section id="camera" class="section camera-section">
+      <div class="camera-copy"><p class="eyebrow">MISSION 05 · FOUR CUT</p><h2>한국 여행 네 컷</h2><p>경복궁·한옥마을·한강 야경·단청 배경을 골라 네 컷을 촬영해 보세요. 사진은 이 화면에만 잠시 표시되며 저장하거나 전송하지 않습니다.</p><label for="stickerSelect">한국 배경 선택</label><select id="stickerSelect"><option value="palace">경복궁의 아침</option><option value="hanok">한옥마을 골목</option><option value="hangang">한강의 밤</option><option value="dancheong">단청 무늬</option></select><button id="cameraBtn" class="primary">카메라 켜기</button><button id="clearPhotos" class="small-btn">네 컷 비우기</button></div>
+      <div class="photo-booth"><div class="booth-title">대한민국 시간여행 · FOUR CUT</div><div id="fourCut" class="four-cut"><div class="cut"><span>1</span></div><div class="cut"><span>2</span></div><div class="cut"><span>3</span></div><div class="cut"><span>4</span></div></div><div class="camera-frame bg-palace"><video id="cameraVideo" playsinline autoplay muted hidden></video><canvas id="personCanvas" aria-label="배경이 제거된 카메라 인물 화면"></canvas><div id="cameraPlaceholder"><span>📷</span><p>카메라를 켜면<br>사람만 배경 위에 나타나요</p></div><div id="cameraSticker">경복궁의 아침</div><button id="captureBtn" class="capture" hidden aria-label="한 컷 찍기">●</button><canvas id="photoCanvas" hidden></canvas></div><p id="segmentStatus" class="privacy-note">🔒 촬영 결과는 서버에 전송되지 않으며 새로고침하면 사라집니다.</p></div>
+    </section>
+
+    <section id="review" class="section review-section">
+      <div class="section-heading"><div><p class="eyebrow">FINAL MISSION · REVIEW</p><h2>여행자의 한마디</h2></div><p>가장 기억에 남은 문화와 느낌을 남겨 주세요. 이 브라우저에만 저장됩니다.</p></div>
+      <div class="review-layout">
+        <form id="reviewForm"><label>닉네임<input id="nickname" maxlength="12" required placeholder="예: 시간여행자"></label><label>가장 기억에 남은 것은?<select id="favorite"><option>역사</option><option>음악</option><option>한복</option><option>음식</option><option>문화유산</option><option>게임</option></select></label><label>한 줄 후기<textarea id="reviewText" maxlength="80" required placeholder="새롭게 알게 된 점이나 느낌을 적어보세요."></textarea></label><div class="rating" aria-label="별점"><button type="button" data-rating="1">★</button><button type="button" data-rating="2">★</button><button type="button" data-rating="3">★</button><button type="button" data-rating="4">★</button><button type="button" data-rating="5">★</button></div><button class="primary" type="submit">후기 남기기</button></form>
+        <div><h3>방명록 <span id="reviewCount">0</span></h3><div id="reviewList" class="review-list"></div></div>
+      </div>
+    </section>
+  </main>
+  <footer><strong>대한민국 시간여행단</strong><p>보고 · 듣고 · 놀며 만나는 우리 문화</p><a href="#home">맨 위로 ↑</a></footer>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/selfie_segmentation/selfie_segmentation.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

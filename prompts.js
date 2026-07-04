@@ -1,0 +1,1 @@
+document.querySelectorAll('.copy-btn').forEach(button=>button.addEventListener('click',async()=>{const text=button.closest('.prompt-card').querySelector('pre').innerText;try{await navigator.clipboard.writeText(text);button.textContent='복사 완료 ✓';setTimeout(()=>button.textContent='프롬프트 복사',1600)}catch{button.textContent='드래그해서 복사해 주세요'}}));
